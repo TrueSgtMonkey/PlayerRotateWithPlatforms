@@ -30,6 +30,7 @@ func _physics_process(delta):
 	# pivot
 	if(!delay || !hasDelay):
 		rotate_y(rotSpeed * delta)
+		child.rotate_y(-rotSpeed * delta)
 		
 	var pos2 = child.global_transform.origin
 	velocity = (pos2 - pos1) / delta
