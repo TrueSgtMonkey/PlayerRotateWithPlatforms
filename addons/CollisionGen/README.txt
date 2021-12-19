@@ -1,1 +1,0 @@
-This is the script that I used in the video. It has some things you may not find useful. There are other versions available in the description!
