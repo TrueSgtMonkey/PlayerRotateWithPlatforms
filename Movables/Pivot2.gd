@@ -33,6 +33,7 @@ func _physics_process(delta):
 	if(!delay || !hasDelay):
 		currentRotation = rotSpeed * delta
 		rotate_y(currentRotation)
+		#child.rotate_y(-currentRotation)
 		
 	var pos2 = child.global_transform.origin
 	velocity = (pos2 - pos1) / delta
