@@ -9,7 +9,6 @@ export (bool) var delay = false
 var velocity := Vector3()
 var child : KinematicBody
 var myTimer : Timer
-var currentRotation := 0.0
 
 func _ready():
 	for i in get_children():
@@ -29,10 +28,8 @@ func _physics_process(delta):
 	# if hasDelay is true, then this if condition solely depends on delay
 	# if delay is true in that case, then the body will not rotate around the
 	# pivot
-	currentRotation = 0.0
 	if(!delay || !hasDelay):
-		currentRotation = rotSpeed * delta
-		rotate_y(currentRotation)
+		rotate_y(rotSpeed * delta)
 		
 	var pos2 = child.global_transform.origin
 	velocity = (pos2 - pos1) / delta
@@ -42,6 +39,3 @@ func startDelay():
 	
 func getVelocity():
 	return velocity
-	
-func getRotation():
-	return currentRotation

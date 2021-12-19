@@ -94,8 +94,6 @@ func slope(slides : int):
 				colliderVelocity = touched.collider.getVelocity()
 			else:
 				colliderVelocity = touched.collider_velocity
-			if touched.collider.has_method("getRotation"):
-				$Pivot.rotate_y(touched.collider.getRotation())
 	else:
 		# If we don't get any slides for some reason, this is the backup
 		getPlatformBelow()
@@ -108,9 +106,6 @@ func getPlatformBelow():
 			colliderVelocity = result.collider.getVelocity()
 		else:
 			print("There was no getVelocity() function!")
-			
-		if result.collider.has_method("getRotation"):
-			$Pivot.rotate_y(result.collider.getRotation())
 	
 func coyoteOut():
 	grounded = false
